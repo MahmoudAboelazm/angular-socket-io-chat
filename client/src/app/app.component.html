@@ -1,0 +1,22 @@
+<section>hello world
+  <form (ngSubmit)="onSubmit()">
+    <br>
+    <div>
+        <label for="message" >Add Message</label>
+        <br>
+        <input type="text" name="message" [(ngModel)]="message" id="message" placeholder="add message">
+    </div>
+    <br>
+    <div>
+        <label for="room" >Room</label>
+        <br>
+        <input type="text" name="room"  [(ngModel)]="room" id="room" placeholder="add room">
+        <button (click)="joinRoom()">Join Room</button>
+    </div>
+    
+    <br>
+    <input type="submit" value="Send Message">
+</form>
+ 
+ 
+</section>
