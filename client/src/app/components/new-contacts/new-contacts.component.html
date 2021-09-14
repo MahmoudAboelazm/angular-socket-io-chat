@@ -1,0 +1,22 @@
+<section class="fixed-section">
+    <div class="overlay" (click)="close()"></div>
+    <div class="form-container">
+        <div class="form-box">
+            <div class="form-label">
+                <label>Create Contact</label>
+            </div>
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-input">
+                    <input type="text" placeholder="ID..." name="contactId" [(ngModel)]="contactId">
+                </div>
+                <div class="form-input">
+                    <input type="text" placeholder="Name..." name="contactName" [(ngModel)]="contactName">
+                </div>
+                <div class="form-button">
+                <input type="submit" value="Create New Contact">
+            </div>
+            </form>
+        </div>
+    </div>
+
+</section>

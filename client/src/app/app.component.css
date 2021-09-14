@@ -1,6 +1,9 @@
-section {
-  background-color: rgb(0, 0, 0);
+main {
+  font-family: sans-serif, Verdana, Geneva, Tahoma, sans-serif;
   height: 100vh;
-  color: aliceblue;
-  margin: -8px;
+}
+app-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

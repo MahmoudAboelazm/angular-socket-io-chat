@@ -1,0 +1,17 @@
+<section class="form-container">
+    <form (ngSubmit)="onSubmit()" class="form-box">
+        <div class="form-label">
+            <label for="userId">Enter Your ID</label>
+        </div>
+        <div class="form-input">
+            <input type="text" name="userId" autofocus placeholder="Type Your ID..." [(ngModel)]="userId" id="userId" required>
+            
+        </div>
+        <div class="form-button">
+            <input type="submit" value="Login">
+        </div>
+        <div class="form-button">
+            <button (click)="generateUserId()">Generate New ID</button>
+        </div>
+    </form>
+</section>

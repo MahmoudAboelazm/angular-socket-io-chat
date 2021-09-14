@@ -1,0 +1,18 @@
+    <div class="messages">
+        <div *ngFor="let message of conversation.messages" [ngClass]="{'you': message['fromMe']}">
+            {{message["sender"]}}
+            {{message["text"]}}
+            <p>
+                {{message["fromMe"] ? "You" : message["name"]}}
+            </p>
+
+        </div>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-input">
+            <input type="text" placeholder="Type Your Message..." name="message" [(ngModel)]="message" id="message">
+            <div class="form-button">
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </form>

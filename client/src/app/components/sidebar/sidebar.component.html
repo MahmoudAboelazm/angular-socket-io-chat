@@ -1,0 +1,18 @@
+<nav>
+    <button (click)="setOpenNav()">
+        open/close
+    </button>
+    <div class="nav-container" [ngClass]="{'show-nav': openNav}">
+        <div class="nav">
+            <ul>
+                <li class="form-button" [ngClass]="{'active': activeKey === 'contacts'}"><button (click)="setActiveKey('contacts')">Contacts</button></li>
+                <li class="form-button" [ngClass]="{'active': activeKey === 'conversations'}"><button (click)="setActiveKey('conversations')">Conversations</button></li>
+            </ul>
+            <div class="nav-info">
+                <app-conversations *ngIf="activeKey === 'conversations'"></app-conversations>
+                <app-contacts *ngIf="activeKey === 'contacts'"></app-contacts>
+            </div>
+        </div>
+    </div>
+    <div class="nav-overlay" [ngClass]="{'overlay': openNav}" (click)="setOpenNav()"></div>
+</nav>

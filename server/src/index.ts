@@ -6,13 +6,21 @@ const io = require("socket.io")(3000, {
 });
 
 io.on("connection", (socket: Socket) => {
-  console.log(socket.id);
-  socket.on("message", (message, room) => {
-    if (!room) io.emit("receive", message);
-    else io.to(room).emit("receive", message);
-  });
-  socket.on("join-room", (room, cb) => {
-    socket.join(room);
-    cb("Joined to: " + room);
+  const id = socket.handshake.query.id as string;
+  console.log("id", id);
+  socket.join(id);
+
+  socket.on("send-message", ({ recipients, text }) => {
+    if (!recipients || !text) return;
+    recipients.forEach((recipient: string) => {
+      const newRecipients = recipients.filter((r: string) => r !== recipient);
+      newRecipients.push(id);
+      socket.broadcast.to(recipient).emit("receive-message", {
+        recipients: newRecipients,
+        sender: id,
+        text,
+      });
+    });
   });
 });
+///////

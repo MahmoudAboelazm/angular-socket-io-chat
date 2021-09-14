@@ -1,0 +1,12 @@
+<section>
+    <div class="contacts">
+        <div *ngFor="let contact of contacts">{{contact.name}}</div>
+    </div>
+    <div class="form-button">
+        <button (click)="showNewContact()">
+            New Contact
+        </button>
+    </div>
+</section>
+<app-new-contacts *ngIf="newContact" (onSubmitNewContact)="onCreateContact($event)" (onClose)="closeNewContact()">
+</app-new-contacts>

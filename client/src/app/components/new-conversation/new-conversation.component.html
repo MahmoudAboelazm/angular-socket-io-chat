@@ -1,0 +1,19 @@
+<section class="fixed-section">
+    <div class="overlay" (click)="close()"></div>
+    <div class="form-container">
+        <div class="form-box">
+            <div class="form-label">
+                <label>Select Contacts</label>
+            </div>
+            <form (ngSubmit)="onSubmit()">
+                <div *ngFor="let contact of contacts">
+                    <input type="checkbox" name="checkId" (change)="checkId(contact.id)">
+                    <label>{{contact.name}}</label>
+                </div>
+                <div class="form-button">
+                    <input type="submit" value="Create New Conversation">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

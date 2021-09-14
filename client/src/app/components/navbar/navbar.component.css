@@ -1,0 +1,20 @@
+nav details {
+  background-color: teal;
+  padding: 0.3rem 1rem;
+}
+nav details h4 {
+  margin: 0;
+}
+nav details summary {
+  cursor: pointer;
+}
+nav ul {
+  display: flex;
+  background-color: blue;
+  padding: 1rem;
+  margin: 0;
+  color: white;
+}
+nav ul li {
+  list-style: none;
+}

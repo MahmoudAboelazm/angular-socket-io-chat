@@ -1,0 +1,7 @@
+.form-container .form-box {
+  z-index: 9;
+}
+.form-container .form-button > input {
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+}

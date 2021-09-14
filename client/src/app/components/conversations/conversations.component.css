@@ -1,0 +1,11 @@
+section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+section .conversations {
+  overflow: auto;
+}
+section .form-button {
+  margin-top: 0.3rem;
+}

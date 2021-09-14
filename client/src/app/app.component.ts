@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChatService } from './services/chat.service';
+import { LoginService } from './services/login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,20 +7,17 @@ import { ChatService } from './services/chat.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'socket-io';
-  chats: string[] = [];
-  message: string = '';
-  room: string = '';
-  constructor(private chatService: ChatService) {}
+  userId: string = '';
+  constructor(private login: LoginService) {
+    this.userId = this.login.userId;
+    this.login.userIdChanges.subscribe((value) => (this.userId = value));
+  }
 
   ngOnInit(): void {
-    this.chatService.getMessage();
+    this.login.loginWithId();
   }
-  onSubmit() {
-    this.chatService.sendMessage(this.message, this.room);
-    this.message = '';
-  }
-  joinRoom() {
-    this.chatService.joinRoom(this.room);
+
+  onLoginWithId(id: string) {
+    this.login.loginWithId(id);
   }
 }
