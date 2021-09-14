@@ -1,9 +1,11 @@
 <section>
     <div class="contacts">
-        <div *ngFor="let contact of contacts">{{contact.name}}</div>
+        <div *ngFor="let contact of contacts" class="p-color contact">
+            
+            {{contact.name}}</div>
     </div>
     <div class="form-button">
-        <button (click)="showNewContact()">
+        <button (click)="showNewContact()" class="s-color">
             New Contact
         </button>
     </div>

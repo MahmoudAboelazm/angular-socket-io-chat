@@ -9,3 +9,7 @@ section .contacts {
 section .form-button {
   margin-top: 0.3rem;
 }
+.contact {
+  padding: 0.5rem 1rem;
+  margin-bottom: 5px;
+}

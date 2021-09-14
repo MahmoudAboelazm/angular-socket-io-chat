@@ -2,15 +2,15 @@
     <div class="conversations">
         <div class="form-button" *ngFor="let conversation of formatedConversations; index as i"
             (click)="selectConversation(i)">
-            <button>
+            <button class="t-color">
                 {{ conversation.names.join(", ")}}
             </button>
 
         </div>
     </div>
     <div class="form-button">
-        <button (click)="showNewConversation()">
-            New conversation
+        <button class="s-color" (click)="showNewConversation()">
+            New Conversation
         </button>
     </div>
 </section>

@@ -54,7 +54,7 @@ body {
   cursor: pointer;
   border: none;
   padding: 0.6rem 1rem;
-  background-image: linear-gradient(46deg, #04044a, blue);
+  /* background-image: linear-gradient(46deg, #04044a, blue); */
   color: white;
   margin-bottom: 0.5rem;
 }
@@ -71,4 +71,15 @@ body {
   height: 100%;
   z-index: 2;
   opacity: 0.5;
+}
+
+/* Colors */
+.t-color {
+  background: #3f51b5;
+}
+.p-color {
+  background-color: #e8eaf6;
+}
+.s-color {
+  background-color: #ff4081;
 }

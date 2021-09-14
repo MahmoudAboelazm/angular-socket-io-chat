@@ -18,6 +18,7 @@ export class MessagesService {
   contacts: Contact[] = [];
   conversations: Conversation[] = [];
   selectedConversationIndex: number | undefined;
+  selectedConversationIndexChange: Subject<number> = new Subject<number>();
   selectedConversation: Conversation = {} as Conversation;
   selectedConversationChange: Subject<Conversation> =
     new Subject<Conversation>();
@@ -29,6 +30,10 @@ export class MessagesService {
   ) {
     this.selectedConversationChange.subscribe(
       (value) => (this.selectedConversation = value)
+    );
+
+    this.selectedConversationIndexChange.subscribe(
+      (value) => (this.selectedConversationIndex = value)
     );
 
     this.userId = loginService.userId;
@@ -58,7 +63,7 @@ export class MessagesService {
   }
   showMessages(i: number) {
     if (typeof i === 'undefined') return;
-    this.selectedConversationIndex = i;
+    this.selectedConversationIndexChange.next(i);
     let conversation = this.conversations.filter((_, index) => index === i)[0];
     conversation.messages.map((message) => {
       if (message.sender === this.userId) {

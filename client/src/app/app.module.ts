@@ -11,7 +11,6 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { NewContactsComponent } from './components/new-contacts/new-contacts.component';
 import { NewConversationComponent } from './components/new-conversation/new-conversation.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DashboardComponent,
     SidebarComponent,
     NewContactsComponent,
-    NavbarComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
